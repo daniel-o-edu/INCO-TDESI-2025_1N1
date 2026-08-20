@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 01 - Introdução à Internet das Coisas</title>
+<style>
+ body {
+ margin: 0; 
+ padding: 0; 
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background-color: #f8f9fa; 
+ color: #212529;
+ display: flex; 
+ flex-direction: column; 
+ height: 100vh;
+ overflow: hidden;
+ }
+ .slide-container {
+ width: 95vw;
+ height: 85vh;
+ margin: auto;
+ display: flex; 
+ align-items: center; 
+ justify-content: center;
+ padding: 20px; 
+ box-sizing: border-box; 
+ position: relative;
+ }
+ .slide {
+ display: none; 
+ width: 100%; 
+ max-width: 1200px; 
+ height: 80vh;
+ background: #ffffff; 
+ border-radius: 12px;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+ padding: 50px;
+ font-size: 24px; 
+ line-height: 1.5; 
+ overflow-y: auto;
+ }
+ .slide.active { 
+ display: block; 
+ animation: fadeIn 0.4s ease-in-out;
+ }
+ @keyframes fadeIn {
+ from { opacity: 0; transform: translateY(10px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+ h1, h2, h3, h4 { 
+ color: #0d6efd; 
+ margin-top: 0; 
+ }
+ code, pre { 
+ background: #e9ecef; 
+ padding: 10px 15px; 
+ border-radius: 8px; 
+ font-family: 'Courier New', Courier, monospace; 
+ display: block; 
+ font-size: 20px;
+ overflow-x: auto;
+ white-space: pre-wrap;
+ }
+ .controls {
+ height: 80px; 
+ background: #ffffff; 
+ border-top: 1px solid #dee2e6;
+ display: flex; 
+ justify-content: space-between; 
+ align-items: center; 
+ padding: 0 50px;
+ }
+ button {
+ background: #0d6efd; 
+ color: white; 
+ border: none; 
+ padding: 12px 25px;
+ font-size: 18px; 
+ border-radius: 8px; 
+ cursor: pointer;
+ transition: background 0.2s;
+ }
+ button:hover {
+ background: #0b5ed7;
+ }
+ button:disabled { 
+ background: #adb5bd; 
+ cursor: not-allowed; 
+ }
+ .progress { 
+ font-size: 20px; 
+ font-weight: bold; 
+ color: #495057;
+ }
+ .slide-label { font-weight: bold; text-transform: uppercase; color: #6c757d; margin-bottom: 20px; font-size: 18px; letter-spacing: 1px; }
+ .callout { padding: 20px 30px; border-radius: 8px; margin: 20px 0; border-left: 8px solid; }
+ .callout.blue { background: #cce5ff; border-color: #004085; color: #004085; }
+ .callout.green { background: #d4edda; border-color: #155724; color: #155724; }
+ .callout.red { background: #f8d7da; border-color: #721c24; color: #721c24; }
+ .callout.yellow { background: #fff3cd; border-color: #856404; color: #856404; }
+ .section-header { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; }
+ .section-num { font-size: 80px; font-weight: bold; color: #e9ecef; margin-bottom: -20px; }
+ .section-header h2 { font-size: 48px; color: #0d6efd; margin-bottom: 20px; }
+ img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; border: 1px solid #dee2e6; }
+ table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 20px; }
+ th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+ th { background-color: #e9ecef; color: #0d6efd; }
+</style>
+</head>
+<body>
+ <div class="slide-container" id="slides">
+
+ <!-- Slide 1 -->
+ <div class="slide active">
+ <div class="slide-label">Aula 01</div>
+ <h1>Aula 01 - Introdução à Internet das Coisas</h1>
+ <p><strong>Descrição:</strong> Apresentação da UC, do plano de ensino e dos critérios da avaliação prática. Introdução ao conceito e paradigmas da IoT a partir de exemplos do cotidiano.</p>
+ </div>
+ 
+ <!-- Slide 2 -->
+ <div class="slide">
+ <div class="section-header">
+ <div class="section-num">01</div>
+ <h2>1. Apresentação da Unidade Curricular (UC)</h2>
+ </div>
+ </div>
+
+ <!-- Slide 3 -->
+ <div class="slide">
+ <h2>1. Apresentação da Unidade Curricular (UC)</h2>
+ <p>Sejam bem-vindos à Unidade Curricular de Internet das Coisas (IoT)!</p>
+ <p>Esta Unidade Curricular faz parte do Módulo Específico I do Curso Técnico em Desenvolvimento de Sistemas.</p>
+ <ul>
+ <li><strong>Carga Horária:</strong> 128 horas, distribuídas ao longo de 35 aulas.</li>
+ <li><strong>Objetivo Geral:</strong> Desenvolver as capacidades técnicas e socioemocionais para atuar com tecnologias e sistemas impactados pela Internet das Coisas.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 4 -->
+ <div class="slide">
+ <h2>Como nossas aulas serão divididas?</h2>
+ <p>O cronograma foi estruturado em 7 blocos temáticos, com a seguinte metodologia prática e calibrada:</p>
+ <ul>
+ <li><strong>Teoria:</strong> 11 aulas focadas nos conceitos e fundamentos da área.</li>
+ <li><strong>Simuladores:</strong> 11 aulas utilizando softwares de simulação virtual.</li>
+ <li><strong>Prática em Bancada e Equipamentos Reais:</strong> 13 aulas totalmente práticas para montagem física, integração de hardware, testes de conectividade e publicação em site.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 5 -->
+ <div class="slide">
+ <div class="section-header">
+ <div class="section-num">02</div>
+ <h2>2. O Desafio e Critérios de Avaliação Prática</h2>
+ </div>
+ </div>
+
+ <!-- Slide 6 -->
+ <div class="slide">
+ <h2>2. O Desafio e Critérios de Avaliação Prática</h2>
+ <p>Nesta Unidade Curricular, nós trabalharemos com a metodologia de "Situação de Aprendizagem Desafiadora" focada em um Projeto.</p>
+ <ul>
+ <li><strong>O Cenário:</strong> Uma feira de inovação para investidores anjo está buscando projetos promissores baseados em tecnologias digitais e IoT.</li>
+ <li><strong>O Desafio:</strong> Como membros de uma equipe de desenvolvimento, vocês deverão criar uma solução tecnológica inovadora baseada em IoT para aperfeiçoar um produto digital existente, coletando e analisando dados em tempo real para tornar o produto mais eficiente.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 7 -->
+ <div class="slide">
+ <h2>Como vocês serão avaliados?</h2>
+ <p>Durante o semestre teremos atividades no AVA (diagnósticas, checklists de montagem, relatórios) e 2 Avaliações Objetivas (teóricas). A Avaliação Prática (Projeto Integrador) no final do semestre será dividida em 4 entregas fundamentais:</p>
+ <ul>
+ <li><strong>A. Protótipo funcional validado:</strong> O circuito operando fisicamente com sensores, ESP32 e atuadores.</li>
+ <li><strong>B. Relatório Técnico:</strong> Documentação estruturada conforme os padrões técnicos.</li>
+ <li><strong>C. Site atualizado:</strong> Integração dos dados do protótipo físico com a interface web em tempo real.</li>
+ <li><strong>D. Defesa Técnica:</strong> Apresentação e demonstração funcional do sistema ao vivo perante a banca avaliadora.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 8 -->
+ <div class="slide">
+ <div class="section-header">
+ <div class="section-num">03</div>
+ <h2>3. Introdução ao Conceito e Paradigmas da IoT: Onde o Físico Encontra o Digital</h2>
+ </div>
+ </div>
+
+ <!-- Slide 9 -->
+ <div class="slide">
+ <h2>3. Introdução ao Conceito e Paradigmas da IoT</h2>
+ <p>Antes de colocarmos a mão na massa com fios, placas, simuladores virtuais e linhas de código em linguagem C, precisamos entender o ecossistema que estamos prestes a construir. Quando falamos de Internet das Coisas (IoT), é comum pensarmos imediatamente em geladeiras conectadas ou lâmpadas controladas por celular. No entanto, o universo profissional e industrial que exploraremos aqui vai muito além disso.</p>
+ <p>A IoT representa uma quebra de paradigma na tecnologia global. Trata-se de conceder "sentidos" (como tato e visão) a objetos inanimados e equipamentos industriais, permitindo que eles coletem dados do mundo real e ajam de forma automatizada.</p>
+ </div>
+
+ <!-- Slide 10 -->
+ <div class="slide">
+ <h2>3. Introdução ao Conceito e Paradigmas da IoT (Continuação)</h2>
+ <p>Para o nosso desafio prático neste semestre — o desenvolvimento de uma solução tecnológica inovadora para aperfeiçoar um produto digital perante investidores —, não basta apenas saber ligar um componente elétrico na bancada. É fundamental compreender a jornada completa da informação: como os dados nascem no ambiente físico através de sensores, como eles viajam de forma segura por redes de comunicação, e como se transformam em painéis de monitoramento web em tempo real.</p>
+ <p>A seguir, vamos desconstruir o conceito de IoT mapeando a sua arquitetura fundamental e entendendo as regras que diferenciam um projeto comum de eletrônica de uma verdadeira solução conectada de ponta a ponta.</p>
+ </div>
+
+ <!-- Slide 11 -->
+ <div class="slide">
+ <h2>3.1 A Arquitetura Fundamental da IoT e a Visão Sistêmica do Curso</h2>
+ <p>Para compreender a Internet das Coisas além do senso comum, analisamos o sistema dividindo-o em 4 camadas arquiteturais. Ao longo do semestre, cada camada será estudada e implementada na prática:</p>
+ <ul>
+ <li>1. Camada do Mundo Físico (Sensores e Atuadores) &lt;- Bloco 1</li>
+ <li>2. Camada de Processamento Local (C, Arduino, ESP32) &lt;- Blocos 2 e 3</li>
+ <li>3. Camada de Conectividade e Redes (Wi-Fi, RFID, Redes) &lt;- Blocos 4 e 6</li>
+ <li>4. Camada de Aplicação e Software (MQTT, OPC, Dashboards) &lt;- Bloco 5</li>
+ </ul>
+ </div>
+
+ <!-- Slide 12 -->
+ <div class="slide">
+ <h2>1. Camada do Mundo Físico: Sensoriamento e Atuação</h2>
+ <p>É a interface do sistema com o ambiente real.</p>
+ <ul>
+ <li><strong>Sensores (Entrada de Dados):</strong> Dispositivos responsáveis por captar grandezas físicas do mundo real (como temperatura, luminosidade e presença) e transformá-las em sinais elétricos.</li>
+ <li><strong>Atuadores (Saída de Ação):</strong> Dispositivos que recebem comandos do sistema para modificar o estado físico do ambiente, acionando motores, relés ou cargas industriais.</li>
+ <li><strong>Conexão com o Curso:</strong> Vocês aprenderão o condicionamento de sinais elétricos e a montagem física desses componentes em bancada real com foco em normas de qualidade e segurança.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 13 -->
+ <div class="slide">
+ <h2>2. Camada de Processamento Local: Microcontroladores e Programação Embarcada</h2>
+ <p>É a "inteligência" de borda (Edge Computing).</p>
+ <ul>
+ <li><strong>Hardware:</strong> Utilização de placas de desenvolvimento como Arduino (para fundamentos de I/O) e ESP32 (hardware de alto desempenho com Wi-Fi e Bluetooth nativos).</li>
+ <li><strong>Lógica Embarcada:</strong> O processamento local executa rotinas de leitura analógica/digital e geração de sinais PWM.</li>
+ <li><strong>Conexão com o Curso:</strong> Desenvolveremos códigos estruturados na Linguagem C embarcada, com foco em eficiência, estrutura condicionais/de repetição e boas práticas de programação.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 14 -->
+ <div class="slide">
+ <h2>3. Camada de Conectividade de Hardware e Infraestrutura de Redes</h2>
+ <p>É o meio físico e lógico que transporta a informação.</p>
+ <ul>
+ <li><strong>Tecnologias de Hardware:</strong> Exploração de meios de comunicação de curto, médio e longo alcance, como Wi-Fi, Bluetooth, RFID, Rádio e Satélite.</li>
+ <li><strong>Redes de Computadores:</strong> Configuração de switches, roteadores e endereçamento IP para garantir a movimentação segura e estável dos dados.</li>
+ <li><strong>Conexão com o Curso:</strong> Realizaremos ensaios comparativos de alcance, latência e estabilidade, além de rotinas de troubleshooting (diagnóstico e correção de falhas em rede).</li>
+ </ul>
+ </div>
+
+ <!-- Slide 15 -->
+ <div class="slide">
+ <h2>4. Camada de Software, Protocolos e Integração Web</h2>
+ <p>É a transformação do dado bruto em informação acessível para tomada de decisão.</p>
+ <ul>
+ <li><strong>Protocolos IoT:</strong> Comunicação orientada a eventos leve e rápida, fundamental para economizar recursos de hardware e rede.</li>
+ <li><strong>Interfaces e Dashboards:</strong> Exibição dos dados coletados em tempo real em sites ou plataformas web.</li>
+ <li><strong>Conexão com o Curso:</strong> Estudo aprofundado dos padrões MQTT (Publish/Subscribe) e OPC (Open Platform Communications) para integração com a indústria.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 16 -->
+ <div class="slide">
+ <h2>3.2 Mapeamento: Da Teoria ao Projeto Integrador</h2>
+ <p>Toda a teoria dos paradigmas da loT converge para o Projeto Integrador (Bloco 7). A tabela abaixo demonstra como os conhecimentos das aulas se conectam ao desafio final:</p>
+ <table>
+ <thead>
+ <tr>
+ <th>Componente da loT</th>
+ <th>Conceito Teórico (Blocos 1-6)</th>
+ <th>Aplicação no Projeto Integrador (Bloco 7)</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Captação</strong></td>
+ <td>Sensoriamento físico e condicionamento de sinais.</td>
+ <td>Coleta automática de dados do protótipo.</td>
+ </tr>
+ <tr>
+ <td><strong>Controle</strong></td>
+ <td>Programação C no ESP32/Arduino e acionamento de atuadores.</td>
+ <td>Execução de rotinas de controle e automação.</td>
+ </tr>
+ <tr>
+ <td><strong>Comunicação</strong></td>
+ <td>Configuração de redes e protocolos (MQTT/Wi-Fi).</td>
+ <td>Envio contínuo de mensagens para o Broker.</td>
+ </tr>
+ <tr>
+ <td><strong>Visualização</strong></td>
+ <td>Integração Web/Site em tempo real.</td>
+ <td>Dashboard do produto digital atualizado ao vivo perante a banca.</td>
+ </tr>
+ </tbody>
+ </table>
+ <p style="font-size: 18px; margin-top: 15px;"><strong>Nota:</strong> O aprendizado de loT é cumulativo. O circuito simples que simularemos nas primeiras aulas será o mesmo bloco básico utilizado para construir a solução conectada completa no final!</p>
+ </div>
+
+ <!-- Slide 17 -->
+ <div class="slide">
+ <h2>3.3 Os Grandes Paradigmas Tecnológicos da loT</h2>
+ <p>Os paradigmas da Internet das Coisas (IoT) redefinem a relação entre o mundo físico e o digital por meio de automação, descentralização e análise contínua de dados. Seus principais pilares se manifestam na comunicação máquina a máquina (M2M), no uso de sensores distribuídos e na tomada de decisão preditiva.</p>
+ </div>
+
+ <!-- Slide 18 -->
+ <div class="slide">
+ <h2>Casas Inteligentes (IoT de Consumo)</h2>
+ <ul>
+ <li><strong>Paradigma:</strong> Foco em conforto, personalização e eficiência energética em escala individual.</li>
+ <li><strong>Exemplos cotidianos:</strong> Termostatos que aprendem a rotina da família para ajustar a temperatura antes da chegada, lâmpadas e assistentes de voz integrados e robôs aspiradores mapeando cômodos.</li>
+ <li><strong>Dinâmica:</strong> O usuário interage de forma direta ou automatizada via aplicativos móveis, transformando eletrodomésticos passivos em nós ativos de rede.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 19 -->
+ <div class="slide">
+ <h2>Indústria 4.0 (IIoT - Industrial IoT)</h2>
+ <ul>
+ <li><strong>Paradigma:</strong> Foco em produtividade extrema, segurança operacional e manutenção preditiva.</li>
+ <li><strong>Exemplos cotidianos:</strong> Sensores de vibração e temperatura acoplados a motores de fábricas para antecipar falhas mecânicas antes que ocorram.</li>
+ <li><strong>Dinâmica:</strong> Elimina a parada não planejada de máquinas; os ativos industriais monitoram a própria saúde e comunicam gargalos diretamente aos sistemas de gestão corporativa.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 20 -->
+ <div class="slide">
+ <h2>Cidades Inteligentes (Smart Cities)</h2>
+ <ul>
+ <li><strong>Paradigma:</strong> Gestão sistêmica de recursos públicos, mobilidade urbana e sustentabilidade em larga escala.</li>
+ <li><strong>Exemplos cotidianos:</strong> Semáforos que mudam o tempo de abertura de acordo com o fluxo real de veículos e sensores de lixeiras públicas que avisam o momento exato da coleta.</li>
+ <li><strong>Dinâmica:</strong> Integração massiva de dados de infraestrutura urbana em nuvem para otimizar o espaço público e melhorar a qualidade de vida coletiva.</li>
+ </ul>
+ </div>
+
+ <!-- Slide 21 -->
+ <div class="slide">
+ <div class="section-header">
+ <div class="section-num">04</div>
+ <h2>4. Atividade de Pesquisa</h2>
+ </div>
+ </div>
+
+ <!-- Slide 22 -->
+ <div class="slide">
+ <h2>4. Atividade de Pesquisa</h2>
+ <p>Chegou a hora de explorar o conteúdo na prática! Pesquise na internet um exemplo real de como a loT (Internet das Coisas) é utilizada no nosso cotidiano. Ao descrever o exemplo que você escolheu, detalhe os seguintes pontos:</p>
+ <ul>
+ <li>Hardware utilizado (plataformas, sensores e atuadores);</li>
+ <li>Conectividade (tipos de rede, tecnologia, protocolos);</li>
+ <li>Estrutura do código (tipos de variáveis, estruturas utilizadas).</li>
+ </ul>
+ <p>Não precisa entrar em detalhes, somente uma explicação geral. Estes dados devem ser enviados no AVA na atividade "Aula 1".</p>
+ <p><strong>Próximo passo (Avaliação Diagnóstica):</strong> Agora realizaremos um questionário estruturado de fixação para reconhecer as especificações e conceitos iniciais vistos hoje.</p>
+ </div>
+
+ </div>
+
+ <div class="controls">
+ <button id="prevBtn" onclick="prevSlide()" disabled>Anterior</button>
+ <div class="progress"><span id="current">1</span> / <span id="total"></span></div>
+ <button id="nextBtn" onclick="nextSlide()">Próximo</button>
+ </div>
+
+ <script>
+ let currentSlideIndex = 0;
+ const slides = document.querySelectorAll('.slide');
+ const totalSlides = slides.length;
+ const currentIndicator = document.getElementById('current');
+ const totalIndicator = document.getElementById('total');
+ const prevBtn = document.getElementById('prevBtn');
+ const nextBtn = document.getElementById('nextBtn');
+
+ totalIndicator.textContent = totalSlides;
+
+ function updateView() {
+ slides.forEach((slide, index) => {
+ slide.classList.remove('active');
+ if (index === currentSlideIndex) {
+ slide.classList.add('active');
+ }
+ });
+ currentIndicator.textContent = currentSlideIndex + 1;
+ 
+ prevBtn.disabled = currentSlideIndex === 0;
+ nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+ }
+
+ function nextSlide() {
+ if (currentSlideIndex < totalSlides - 1) {
+ currentSlideIndex++;
+ updateView();
+ }
+ }
+
+ function prevSlide() {
+ if (currentSlideIndex > 0) {
+ currentSlideIndex--;
+ updateView();
+ }
+ }
+
+ document.addEventListener('keydown', (e) => {
+ if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+ if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+ });
+ </script>
+</body>
+</html>
